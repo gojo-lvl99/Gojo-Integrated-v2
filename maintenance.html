@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GoJo Multiplexer — Maintenance</title>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Syne:wght@700;800;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #050508;
+      --surface: #0d0d14;
+      --border: #1a1a2e;
+      --accent: #7c3aed;
+      --accent2: #06b6d4;
+      --text: #e2e8f0;
+      --muted: #475569;
+      --warning: #f59e0b;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'JetBrains Mono', monospace;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem 1rem;
+    }
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-top: 3px solid var(--warning);
+      border-radius: 16px;
+      padding: 2rem 1.5rem;
+      max-width: 420px;
+      width: 100%;
+      text-align: center;
+    }
+    .icon { font-size: 2.5rem; margin-bottom: 1rem; }
+    h1 {
+      font-family: 'Syne', sans-serif;
+      font-size: 1.3rem;
+      font-weight: 800;
+      color: var(--warning);
+      margin-bottom: 0.75rem;
+    }
+    .message {
+      font-size: 0.68rem;
+      color: var(--muted);
+      line-height: 1.8;
+      margin-bottom: 1.5rem;
+    }
+    .steps {
+      text-align: left;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1rem;
+      margin-bottom: 1.5rem;
+    }
+    .step {
+      font-size: 0.65rem;
+      color: var(--text);
+      line-height: 2;
+      display: flex;
+      gap: 0.5rem;
+    }
+    .step-num { color: var(--accent2); font-weight: 700; flex-shrink: 0; }
+    .note {
+      font-size: 0.6rem;
+      color: var(--muted);
+      border-top: 1px solid var(--border);
+      padding-top: 1rem;
+      line-height: 1.8;
+    }
+    .note span { color: var(--accent2); }
+    .footer {
+      margin-top: 2rem;
+      color: var(--muted);
+      font-size: 0.55rem;
+      opacity: 0.4;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="icon">🔧</div>
+    <h1>Scheduled Maintenance</h1>
+    <p class="message">
+      The server is currently undergoing a scheduled credential refresh.
+      This is an automated process and will be completed shortly.
+    </p>
+    <div class="steps">
+      <div class="step"><span class="step-num">1.</span><span>Disconnect from your VPN client if currently connected.</span></div>
+      <div class="step"><span class="step-num">2.</span><span>Wait for the maintenance window to complete (~1 hour).</span></div>
+      <div class="step"><span class="step-num">3.</span><span>Return to the config page and copy your new credentials.</span></div>
+      <div class="step"><span class="step-num">4.</span><span>Import the new config into your VPN client and reconnect.</span></div>
+    </div>
+    <div class="note">
+      If your config has expired or you have no internet access —<br>
+      <span>disconnect</span>, reopen the app, and <span>pull a new config</span>.
+    </div>
+  </div>
+  <div class="footer">GoJo Multiplexer · Xray-core · nginx · supervisord</div>
+</body>
+</html>
+
